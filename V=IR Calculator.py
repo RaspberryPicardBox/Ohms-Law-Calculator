@@ -31,7 +31,7 @@ def I1():
 def R1():
     global R
     try:
-        R = float(input("Please enter a resistance: "))
+        R = int(input("Please enter a resistance: "))
     except:
         print("You entered an invalid symbol. Please use numbers only.")
         print(" ")
@@ -63,7 +63,7 @@ while True:
         print(" ")
         print("You entered {} Volts and {} Amps; finding resistance...".format(V, I))
         print(" ")
-        R = round(V / I, 10)
+        R = int(V / I)
         print("{} Volts / {} Amps = {} Ohms".format(V, I, R))
         W = I*V
         print("This gives you {} Watts of power.".format(W))
@@ -73,12 +73,12 @@ while True:
         print(" ")
         print("You entered {} Volts and {} Ohms; finding current...".format(V, R))
         print(" ")
-        I = round(V / R, 10)
+        I = round(V / R, 2)
         if I > 1:
             print("{} Volts / {} Ohms = {} Amps".format(V, R, I))
         else:
-            I = I * 100
-            print("{} Volts / {} Ohms = {} Milliamps".format(V, R, I))
+            I1 = I * 100
+            print("{} Volts / {} Ohms = {} Milliamps".format(V, R, I1))
         W = I*V
         print(" ")
         print("This gives you {} Watts of power.".format(W))
@@ -88,7 +88,7 @@ while True:
         print(" ")
         print("You entered {} Amps and {} Ohms; finding voltage...".format(I, R))
         print(" ")
-        V = round(I * R, 10)
+        V = round(I * R, 2)
         if V > 1:
             print("{} Amps * {} Ohms = {} Volts".format(I, R, V))
         else:
